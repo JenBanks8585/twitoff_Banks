@@ -1,6 +1,6 @@
 # web_app/routes/book_routes.py
 
-from flask import Blueprint, jsonify, render_template #, request, flash, redirect
+from flask import Blueprint, jsonify, render_template , request#, flash, redirect
 
 book_routes = Blueprint("book_routes", __name__)
 
@@ -25,7 +25,7 @@ def list_books_for_humans():
 @book_routes.route("/books/new")
 def new_book():
     return render_template("new_book.html")
-'''
+
 @book_routes.route("/books/create", methods=["POST"])
 def create_book():
     print("FORM DATA:", dict(request.form))
@@ -36,5 +36,5 @@ def create_book():
     })
     #flash(f"Book '{new_book.title}' created successfully!", "success")
     #return redirect(f"/books")
-'''
+
 
