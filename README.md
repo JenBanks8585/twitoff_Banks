@@ -9,6 +9,13 @@ TODO: instruction for git clone
 
 TODO: instruction for virtual environment
 
+setup for database:
+FLASK_APP=web_app flask db init #> generates app/migrations dir (one time)
+
+# run both when changing the schema:
+FLASK_APP=web_app flask db migrate #> creates the db (with "alembic_version" table)
+FLASK_APP=web_app flask db upgrade #>
+
 ## Usage
 
 ```sh
