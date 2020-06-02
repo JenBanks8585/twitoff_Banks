@@ -7,10 +7,12 @@ from flask_app.routes.home_routes import home_routes
 from flask_app.routes.book_routes import book_routes
 
 DATABASE_URI = "sqlite:///C:\\Users\\J8015\\desktop\\twitoff_Banks\\twitoff_dev.db"
+SECRET_KEY = "top secret"
 
 def create_app():
     app = Flask(__name__)
-
+    
+    app.config["SECRET_KEY"] = SECRET_KEY # enables flash msging via sessions
     app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
