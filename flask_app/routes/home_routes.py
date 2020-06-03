@@ -12,4 +12,4 @@ def hello_world():
 @home_routes.route('/about')
 def about():
     print("You visited the About-Me page")
-    return 'About Me (TODO)'
+    return "<h2 style = 'color:red'> About Me (TODO)</h2>"

@@ -1,5 +1,7 @@
 # web_app/models.py
 
+from datetime import datetime
+
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -32,3 +34,4 @@ def parse_records(database_records):
         del parsed_record["_sa_instance_state"]
         parsed_records.append(parsed_record)
     return parsed_records
+
