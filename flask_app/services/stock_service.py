@@ -3,8 +3,16 @@
 import requests
 import json
 
-apikey= "abc123"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+apikey= os.getenv("ALPHAVANTAGE_API_KEY", default="api_key")
+
 symbol = "AAPL"
+#symbol = input(Please choose a symbol like 'AAPL')
+
 request_url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={apikey}"
 print(request_url)
 
