@@ -1,0 +1,27 @@
+<!-- flask_app/templates/new_tweet.html -->
+
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "new_tweet" %}
+
+{% block content %}
+
+    <h1>New Tweet Page</h1>
+
+    <p>Please fill out the form and submit to create a new tweet!</p>
+
+    <form action="/tweets/create" method="POST">
+
+        <label>Tweeter String:</label>
+        <input type="text" name="tweet_string" placeholder="Twitter Rocks" value="Twitter Rocks">
+
+        <label>Author:</label>
+        <select name="twit_user">
+          <option value="Mr Hocus Pocus">Twit user 1</option>
+          <option value="Mrs Doubtfire">Twit user 2</option>
+          <option value="Ms Super Wonder Girl">Twit user 3</option>
+        </select>
+        
+        <button>Submit</button>
+
+    </form>
+{% endblock %}

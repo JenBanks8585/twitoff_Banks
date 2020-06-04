@@ -1,4 +1,4 @@
-# web_app/routes/book_routes.py
+# flask_app/routes/book_routes.py
 
 from flask import Blueprint, jsonify, render_template , request, flash, redirect
 from flask_app.models import db, Book, parse_records
@@ -48,5 +48,3 @@ def create_book():
     #})
     flash(f"Book '{new_book.title}' created successfully!", "dark")
     return redirect(f"/books")
-
-

@@ -1,6 +1,5 @@
-# web_app/models.py
+# flask_app/models.py
 
-from datetime import datetime
 
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -14,7 +13,12 @@ class Book(db.Model):
     title = db.Column(db.String(128))
     author_id = db.Column(db.String(128))
 
-  
+class Tweet(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    twit = db.Column(db.String(128))
+    twit_user = db.Column(db.String(128))
+
+
 def parse_records(database_records):    
     """
     Parses database records into a clean json-like structure
