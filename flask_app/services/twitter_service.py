@@ -17,7 +17,28 @@ print (type(auth))
 api = tweepy.API(auth)
 print(type(api))
 
+print("_______________")
+print("User")
+user= api.get_user("elonmusk")
+print(type(user))
+print(user.screen_name)
+print(user.id)
+print(user.verified)
+
+
+print("_______________")
+print("Statuses")
+#statuses = api.user_timeline("elonmusk", count = 35)
+#for status in statuses:
+#    print(status.text)
+
+statuses = api.user_timeline(screen_name= "elonmusk", tweet_mode = "extended", count = 150, exclude_replies = True, include_rts = False)
+for status in statuses:
+    print(status.text)
+
+'''
+from terminal
+from pprint import pprint
+pprint(status._jason)'''
+
 breakpoint()
-public_tweets = api.home_timeline()
-for tweet in public_tweets:
-    print(tweet.text)
