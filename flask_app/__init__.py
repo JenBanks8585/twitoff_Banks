@@ -8,6 +8,7 @@ from flask_app.routes.book_routes import book_routes
 from flask_app.routes.tweet_routes import tweet_routes
 from flask_app.routes.twitter_routes import twitter_routes
 from flask_app.routes.admin_routes import admin_routes
+from flask_app.routes.stats_routes import stats_routes
 
 DATABASE_URI = "sqlite:///C:\\Users\\J8015\\desktop\\twitoff_Banks\\twitoff_dev.db"
 SECRET_KEY = "top secret"
@@ -27,6 +28,7 @@ def create_app():
     app.register_blueprint(tweet_routes)
     app.register_blueprint(twitter_routes)
     app.register_blueprint(admin_routes)
+    app.register_blueprint(stats_routes)
    
     return app
 
