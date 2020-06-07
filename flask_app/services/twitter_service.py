@@ -18,8 +18,7 @@ api = tweepy.API(auth)
 print(type(api))
 
 if __name__ == "__main__":
-
-    '''
+    
     print("_______________")
     print("User")
     user= api.get_user("elonmusk")
@@ -37,12 +36,6 @@ if __name__ == "__main__":
 
     statuses = api.user_timeline(screen_name= "elonmusk", tweet_mode = "extended", count = 150, exclude_replies = True, include_rts = False)
     for status in statuses:
-    print(status.text)
+        print(status.text)
 
-    
-    from terminal
-    from pprint import pprint
-    pprint(status._jason)'''
-
-    breakpoint()
-    '''
+ 
