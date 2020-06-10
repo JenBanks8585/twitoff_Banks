@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask
 
 #Part 2
@@ -10,14 +12,16 @@ from flask_app.routes.twitter_routes import twitter_routes
 from flask_app.routes.admin_routes import admin_routes
 from flask_app.routes.stats_routes import stats_routes
 
-DATABASE_URI = "sqlite:///C:\\Users\\J8015\\desktop\\twitoff_Banks\\twitoff_dev.db"
-SECRET_KEY = "top secret"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 def create_app():
     app = Flask(__name__)
     
     app.config["SECRET_KEY"] = SECRET_KEY # enables flash msging via sessions
-    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
+    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
     
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
