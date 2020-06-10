@@ -13,7 +13,7 @@ def train_and_save_model():
     X, y = load_iris(return_X_y=True)
     #print(type(X), X.shape) #> <class 'numpy.ndarray'> (150, 4)
     #print(type(y), y.shape) #> <class 'numpy.ndarray'> (150,)
-    classifier = LogisticRegression(random_state=0, multi_class='multinomial')
+    classifier = LogisticRegression(random_state=0, solver='lbfgs', multi_class='multinomial')
     classifier.fit(X, y)
 
     print("SAVING THE MODEL...")
@@ -30,7 +30,7 @@ def load_model():
 
 if __name__ == "__main__":
 
-    train_and_save_model()
+    train_and_save_model()   
 
     clf = load_model()
     print("CLASSIFIER:", clf)
